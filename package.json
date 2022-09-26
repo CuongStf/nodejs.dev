@@ -10,29 +10,30 @@
     "dotenv": "^6.0.0",
     "emotion": "^10.0.7",
     "emotion-server": "^10.0.7",
-    "gatsby": "^2.0.0",
+    "gatsby": "^4.14.0",
     "gatsby-plugin-canonical-urls": "^2.0.10",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-emotion": "^4.0.4",
-    "gatsby-plugin-manifest": "^2.0.2",
+    "gatsby-plugin-manifest": "^4.8.0",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
-    "gatsby-plugin-sharp": "^2.0.17",
+    "gatsby-plugin-sharp": "^4.8.0",
     "gatsby-plugin-sitemap": "^2.0.5",
     "gatsby-plugin-typescript": "^2.0.0",
     "gatsby-remark-autolink-headers": "^2.0.15",
-    "gatsby-remark-images": "^3.0.1",
+    "gatsby-remark-images": "^5.0.0",
     "gatsby-remark-prismjs": "^3.2.0",
-    "gatsby-source-filesystem": "^2.0.16",
-    "gatsby-transformer-remark": "^2.1.5",
+    "gatsby-source-filesystem": "^4.21.0",
+    "gatsby-transformer-remark": "^4.0.0",
     "intersection-observer": "^0.5.1",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.27.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-emotion": "^10.0.0",
     "react-helmet": "^5.2.0",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.1",
+    "@snyk/protect": "latest"
   },
   "keywords": [
     "gatsby",
@@ -51,7 +52,9 @@
     "test-watch": "yarn jest --watch",
     "test-ci": "yarn test --coverage && codecov",
     "tslint": "tslint --project ./tsconfig.json",
-    "serve": "yarn build && clear && gatsby serve"
+    "serve": "yarn build && clear && gatsby serve",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -105,5 +108,6 @@
       "commit-msg": "commitlint --edit $HUSKY_GIT_PARAMS",
       "pre-push": "yarn format-check && yarn tslint"
     }
-  }
+  },
+  "snyk": true
 }
